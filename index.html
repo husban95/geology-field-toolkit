@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geology Field Toolkit - Strike & Dip Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- رأس التطبيق -->
+        <header class="app-header">
+            <h1>Geology Field Toolkit</h1>
+            <p class="tool-name">Strike & Dip Calculator</p>
+        </header>
+
+        <!-- نموذج الحساب -->
+        <main class="calculator-card">
+            <div class="input-group">
+                <label for="strikeInput">اتجاه المضرب (Strike)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="strikeInput" placeholder="أدخل القيمة (0 - 359)" min="0" max="359" step="any">
+                    <span class="unit">°</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="dipInput">زاوية الميل (Dip)</label>
+                <div class="input-wrapper">
+                    <input type="number" id="dipInput" placeholder="أدخل القيمة (0 - 90)" min="0" max="90" step="any">
+                    <span class="unit">°</span>
+                </div>
+            </div>
+
+            <!-- أزرار التحكم -->
+            <div class="actions">
+                <button id="calcBtn" class="btn primary-btn">حساب (Calculate)</button>
+                <button id="resetBtn" class="btn secondary-btn">إعادة ضبط (Reset)</button>
+            </div>
+
+            <!-- رسائل الخطأ -->
+            <div id="errorMsg" class="error-msg hidden"></div>
+
+            <!-- منطقة عرض النتيجة -->
+            <div id="resultContainer" class="result-container hidden">
+                <h2>النتيجة (Result)</h2>
+                <div class="result-grid">
+                    <div class="result-item">
+                        <span class="label">Strike:</span>
+                        <span id="resStrike" class="value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Dip:</span>
+                        <span id="resDip" class="value">-</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Dip Direction:</span>
+                        <span id="resDipDir" class="value">-</span>
+                    </div>
+                </div>
+                <div id="specialNote" class="special-note hidden"></div>
+            </div>
+        </main>
+
+        <!-- تذييل التطبيق -->
+        <footer class="app-footer">
+            <p>Right-Hand Rule (RHR) Compliant</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
